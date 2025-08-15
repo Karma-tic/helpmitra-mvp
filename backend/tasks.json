@@ -1,0 +1,42 @@
+[
+  {
+    "id": 1,
+    "title": "Dog walk",
+    "description": "abcd",
+    "category": "home",
+    "location": "awadhpuri",
+    "postedBy": "temp_user",
+    "status": "in-progress",
+    "acceptedBy": "tester5"
+  },
+  {
+    "id": 2,
+    "title": "Cat walk",
+    "description": "just for a walk",
+    "category": "pet",
+    "location": "awadhpuri",
+    "postedBy": "tester",
+    "status": "completed",
+    "acceptedBy": "tester5"
+  },
+  {
+    "id": 3,
+    "title": "Dog walk",
+    "description": "no",
+    "category": "pet",
+    "location": "awadhpuri",
+    "postedBy": "tester",
+    "status": "completed",
+    "acceptedBy": "tester5"
+  },
+  {
+    "id": 4,
+    "title": "Cat walk",
+    "description": "mm",
+    "category": "home",
+    "location": "awadhpuri",
+    "postedBy": "tester5",
+    "status": "in-progress",
+    "acceptedBy": "tester"
+  }
+]

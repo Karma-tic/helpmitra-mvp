@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HelpMitra - Tasks</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="tasks.css">
+</head>
+<body>
+    <div class="background-container"></div>
+    <div class="tasks-container">
+        <nav class="user-nav">
+            <span id="user-name-display"></span>
+            <button id="logout-button" class="nav-button">Log Out</button>
+        </nav>
+
+        <header>
+            <h2>Welcome to HelpMitra!</h2>
+            <p>Browse available tasks or post a new one.</p>
+        </header>
+
+        <section id="post-task-section">
+            <h3>Post a New Task</h3>
+            <p id="auth-message" style="display:none; text-align:center;"></p>
+            <form id="task-form" style="display:none;">
+                <label for="task-title">Task Title</label>
+                <input type="text" id="task-title" required autocomplete="off">
+
+                <label for="task-description">Description</label>
+                <textarea id="task-description" rows="4" required></textarea>
+
+                <label for="task-category">Category</label>
+                <select id="task-category">
+                    <option value="pet">Pet-Related Tasks</option>
+                    <option value="home">Home Help & Errands</option>
+                    <option value="office">Office & Admin Tasks</option>
+                    <option value="other">Odd Jobs / Miscellaneous</option>
+                </select>
+
+                <label for="task-location">Location (Bhopal)</label>
+                <input type="text" id="task-location" required autocomplete="address-level2">
+
+                <button type="submit">Post Task</button>
+            </form>
+        </section>
+
+        <section id="tasks-list-section">
+            <h3>Available Tasks</h3>
+            <div id="tasks-list" class="tasks-grid">
+                </div>
+        </section>
+
+        <section id="my-tasks-section">
+            <h3>My Posted Tasks</h3>
+            <div id="my-tasks-list" class="tasks-grid">
+                </div>
+        </section>
+    </div>
+    <script src="tasks.js"></script>
+</body>
+</html>

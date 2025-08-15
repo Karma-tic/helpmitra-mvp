@@ -1,0 +1,37 @@
+[
+  {
+    "id": 1,
+    "name": "tester",
+    "email": "tester@proton.com",
+    "password": "tester",
+    "role": "seeker"
+  },
+  {
+    "id": 2,
+    "name": "tester",
+    "email": "tester@proton.con",
+    "password": "tester",
+    "role": "seeker"
+  },
+  {
+    "id": 3,
+    "name": "tester2",
+    "email": "tester2@proton.com",
+    "password": "qwerty",
+    "role": "helper"
+  },
+  {
+    "id": 4,
+    "name": "tester4",
+    "email": "tester4@proton.com",
+    "password": "tester4",
+    "role": "helper"
+  },
+  {
+    "id": 5,
+    "name": "tester5",
+    "email": "tester5@proton.com",
+    "password": "tester@123",
+    "role": "seeker"
+  }
+]

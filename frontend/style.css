@@ -1,0 +1,112 @@
+:root {
+    /* Define a color palette for your background */
+    --color-1: #6a11cb;
+    --color-2: #2575fc;
+    --color-3: #8a2be2;
+    --color-4: #4a90e2;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    color: #fff;
+    overflow: visible; /* Hide any overflow from the background elements */
+}
+
+/* The main container for the blurry gradient background */
+.background-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: -1;
+    background: linear-gradient(135deg, var(--color-1), var(--color-2));
+    animation: gradientAnimation 15s ease infinite;
+    /* We'll add the blurry circles here using pseudo-elements */
+}
+
+.background-container::before,
+.background-container::after {
+    content: '';
+    position: absolute;
+    width: 60vh;
+    height: 60vh;
+    border-radius: 50%;
+    filter: blur(100px); /* This is the key for the blurry effect */
+    opacity: 0.8;
+}
+
+.background-container::before {
+    background-color: var(--color-3);
+    top: 20%;
+    left: 15%;
+    animation: move1 20s ease-in-out infinite;
+}
+
+.background-container::after {
+    background-color: var(--color-4);
+    bottom: 10%;
+    right: 25%;
+    animation: move2 25s ease-in-out infinite;
+}
+
+/* Keyframes for the background animations */
+@keyframes gradientAnimation {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+@keyframes move1 {
+    0%, 100% { transform: translate(0, 0); }
+    50% { transform: translate(20vw, 15vh); }
+}
+
+@keyframes move2 {
+    0%, 100% { transform: translate(0, 0); }
+    50% { transform: translate(-20vw, -15vh); }
+}
+
+/* The section that contains your main content */
+.content-section {
+    position: relative;
+    z-index: 1;
+    padding: 50px;
+    text-align: center;
+    background-color: rgba(0, 0, 0, 0.4); /* Semi-transparent background for readability */
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+h1 {
+    font-size: 3em;
+    margin-bottom: 0.5em;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Adds a nice drop shadow to the text */
+}
+
+p {
+    font-size: 1.2em;
+}
+.cta-button, .tasks-button {
+    display: inline-block;
+    padding: 15px 30px;
+    background: linear-gradient(135deg, var(--color-1), var(--color-2));
+    color: white;
+    text-decoration: none;
+    border-radius: 50px;
+    font-size: 1.2em;
+    font-weight: bold;
+    margin-top: 20px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.cta-button:hover, .tasks-button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+}
