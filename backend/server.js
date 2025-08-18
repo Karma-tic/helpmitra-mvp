@@ -73,7 +73,9 @@ app.post('/api/login', async (req, res) => {
     if (!user) {
       return res.status(401).json({ message: 'Invalid email or password.' });
     }
-    res.status(200).json({ message: 'Login successful!', user: { name: user.name, role: user.role } });
+    // Destructure properties to handle potential null user
+    const { name, role } = user;
+    res.status(200).json({ message: 'Login successful!', user: { name, role } });
   } catch (err) {
     res.status(500).json({ message: 'Internal server error.' });
   }
