@@ -1,7 +1,6 @@
 document.addEventListener('DOMContentLoaded', () => {
     // Check if user is logged in
     const userName = localStorage.getItem('userName');
-    const userRole = localStorage.getItem('userRole');
 
     if (!userName) {
         alert('You must be logged in to view tasks.');
@@ -9,18 +8,11 @@ document.addEventListener('DOMContentLoaded', () => {
         return;
     }
 
-    // Display user's name
+    // Display user's name and ensure task form is always visible
     document.getElementById('user-name-display').textContent = `Hello, ${userName}!`;
-
-    // Display post task section for posters
-    if (userRole === 'poster') {
-        document.getElementById('task-form').style.display = 'block';
-        document.getElementById('auth-message').textContent = 'You can post a new task below.';
-        document.getElementById('auth-message').style.display = 'block';
-    } else {
-        document.getElementById('auth-message').textContent = 'Sign up as a poster to post tasks.';
-        document.getElementById('auth-message').style.display = 'block';
-    }
+    document.getElementById('task-form').style.display = 'block';
+    document.getElementById('auth-message').textContent = 'You can post a new task below.';
+    document.getElementById('auth-message').style.display = 'block';
 
     // Handle logout
     document.getElementById('logout-button').addEventListener('click', () => {
@@ -70,11 +62,12 @@ document.addEventListener('DOMContentLoaded', () => {
                 taskCard.className = 'task-card';
 
                 let buttonHtml = '';
-                if (userRole === 'helper' && task.status === 'open') {
-                    // Correctly add data-task-id for helpers
+                // Show "Accept Task" button if the user is not the poster and the task is open
+                if (task.postedBy !== userName && task.status === 'open') {
                     buttonHtml = `<button class="accept-btn" data-task-id="${task._id}">Accept Task</button>`;
-                } else if (task.status === 'in-progress' && task.acceptedBy === userName) {
-                    // Correctly add data-task-id for posters to mark complete
+                }
+                // Show "Mark Complete" button if the user accepted the task and it's in-progress
+                else if (task.acceptedBy === userName && task.status === 'in-progress') {
                     buttonHtml = `<button class="complete-btn" data-task-id="${task._id}">Mark Complete</button>`;
                 }
 
