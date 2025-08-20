@@ -1,9 +1,7 @@
 .tasks-container {
-    position: relative;
-    z-index: 1;
-    background: rgba(0, 0, 0, 0.4);
-    padding: 40px;
-    color: white;
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 20px;
 }
 
 header {
@@ -47,14 +45,14 @@ header {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
     gap: 20px;
-    margin-top: 20px;
+    padding: 20px;
 }
 
 .task-card {
-    background: rgba(255, 255, 255, 0.1);
-    border: 1px solid rgba(255, 255, 255, 0.2);
-    padding: 15px;
-    border-radius: 10px;
+    background-color: #2e3048; /* Adjust to your dark theme color */
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
 /* New CSS rule for the nav-buttons */
