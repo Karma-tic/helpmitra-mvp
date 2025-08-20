@@ -1,3 +1,5 @@
+/* tasks.css */
+
 .tasks-container {
     max-width: 1000px;
     margin: 0 auto;
@@ -20,15 +22,24 @@ header {
 #task-form {
     display: flex;
     flex-direction: column;
-    gap: 15px;
+    gap: 15px; /* Adds vertical spacing between elements */
 }
 
-#task-form input, #task-form textarea, #task-form select {
+#task-form label {
+    font-weight: bold;
+    color: #fff; /* Ensures labels are visible on the dark background */
+}
+
+#task-form input,
+#task-form textarea,
+#task-form select {
     padding: 10px;
     border-radius: 5px;
     border: none;
     background: rgba(255, 255, 255, 0.8);
     color: #333;
+    width: 100%; /* Ensures inputs are full width */
+    box-sizing: border-box; /* Includes padding in the total width */
 }
 
 #task-form button {
