@@ -50,6 +50,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     // Handle Log In form submission
+    // Handle Log In form submission
     loginForm.addEventListener('submit', async (e) => {
         e.preventDefault();
         const email = document.getElementById('login-email').value;
@@ -66,6 +67,7 @@ document.addEventListener('DOMContentLoaded', () => {
             alert('Login successful! Welcome, ' + data.user.name);
             localStorage.setItem('isLoggedIn', 'true');
             localStorage.setItem('userName', data.user.name);
+            localStorage.setItem('userRole', data.user.role); // <-- This is the new line
             window.location.href = '/tasks'; // Redirect to the tasks page
         } else {
             alert('Error: ' + data.message);
